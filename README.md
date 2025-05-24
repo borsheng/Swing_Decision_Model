@@ -30,14 +30,13 @@ Every hitter faces a constant trade-off: swing at a borderline pitch or take the
 SWING_DECISION_MODEL/
 ├─ data/
 │  ├ raw/
-│  │  ├ statcast_2022_2024.csv       # Raw pitch data
+│  │  ├ statcast_2022_2024.csv        # Raw pitch data
 │  │  └ run_expectancy.csv            # Base–out run expectancy lookup
 │  └ processed/
 │     ├ statcast_preprocessed.csv     # Cleaned Statcast data (post-preprocessing)
 │     └ statcast_features.csv         # Model-ready features with `decision_value`
 ├─ models/
-│  ├ preprocessor.joblib              # Saved preprocessing & feature pipeline
-│  └ xgb_model.json                   # Trained XGBoost regressor (hyperparameters & weights)
+│  └ xgb_pipeline.joblib              # Saved preprocessing & feature pipeline
 ├─ notebook/
 │  └ Swing_Decision_Analysis.ipynb    # Interactive end-to-end Jupyter Notebook
 ├─ outputs/
