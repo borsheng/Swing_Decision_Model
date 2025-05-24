@@ -21,7 +21,6 @@ Every hitter faces a constant trade-off: swing at a borderline pitch or take the
 8. [Outputs](#outputs)
 9. [Requirements](#requirements)
 10. [Future Work](#future-work)
-11. [License](#license)
 
 ---
 
