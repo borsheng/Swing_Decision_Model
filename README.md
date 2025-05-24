@@ -249,7 +249,7 @@ python src/player_analysis.py --name "Mike Trout"
    | 10   | luke raley             | 0.49                |
 
 * **outputs/{PlayerName}.png** – Decision-value plots across counts for individual hitters.
-![Mike Trout Decision Quality Plot](outputs/Mike_Trout.png)
+![Mike Trout Decision Quality Plot](outputs/mike_trout.png)
 ---
 
 ## Requirements
