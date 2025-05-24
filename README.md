@@ -41,6 +41,7 @@ SWING_DECISION_MODEL/
 │  └ Swing_Decision_Analysis.ipynb    # Interactive end-to-end Jupyter Notebook
 ├─ outputs/
 │  ├ feature_importance.png           # Top-20 feature importances
+│  ├ shap_summary.png                 # Shap Summary
 │  ├ top10.csv / bottom10.csv         # League leaderboards by `decision_value`
 │  └ {PlayerName}.png                 # Per-player decision-quality plots
 ├─ src/
