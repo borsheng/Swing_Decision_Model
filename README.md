@@ -129,6 +129,7 @@ The overall pipeline for the Swing Decision Model comprises four key phases:
 
 3. **Model Training & Validation**
 
+   * **Model Benchmarking**: Compared two regressors — Ridge and XGBoost — using the same preprocessing pipeline.  
    * **Pipeline**: Use `ColumnTransformer` to scale numeric features and one-hot encode categorical ones; employ XGBoost regressor with early stopping on a validation fold.
    * **Hyperparameters**: Tune via cross-validation (learning rate, max\_depth, n\_estimators).
    * **Validation**: Utilize GroupKFold (grouped by batter) to preserve at-bat contexts.
