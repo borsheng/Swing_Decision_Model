@@ -4,7 +4,7 @@
 > This repository answers that question with one number: **decision advantage (runs / 100 pitches).**
 
 Unlike most hitting models, we **ignore contact results** and focus on the *choice itself*.  
-By comparing the expected value of swinging vs taking for every pitch location and count, we quantify how many runs a hitter gains (or forfeits) purely through swing decisions. Aaron Judge’s legendary power can still rank low if his swing decisions, on average, leave runs on the table.
+By comparing the expected value of swinging vs taking for every pitch location and count, we quantify how many runs a hitter gains (or forfeits) purely through swing decisions.
 
 ---
 
@@ -69,8 +69,7 @@ python src/evaluate.py
 python src/leaderboard.py --min_pitches 1000
 
 # 2) drill into a hitter
-python src/player_analysis.py --name "Aaron Judge"
-open outputs/Aaron_Judge.png        # macOS; use any viewer
+python src/player_analysis.py --name "mike trout"      
 ````
 
 ---
@@ -91,8 +90,8 @@ open outputs/Aaron_Judge.png        # macOS; use any viewer
 | Step                   | Description                                                                                                                 |
 | ---------------------- | --------------------------------------------------------------------------------------------------------------------------- |
 | **ΔRE**                | RE‑24 only (base + outs). Actual runs scored are excluded to isolate *decision context*.                                    |
-| **5 cm grid**          | Bucket by `(plate_x, plate_z)` at 5 cm resolution + `pitch_type` + `balls` + `strikes` → \~2 000‑4 000 active buckets.      |
-| **Expected values**    | `EV_swing` = mean ΔRE for swings in bucket • `EV_take` = mean ΔRE for takes. Buckets < 25 samples fall back to league mean. |
+| **0.3 ft grid**          | Bucket by `(plate_x, plate_z)` at 0.3 ft resolution + `pitch_type` + `balls` + `strikes` → \~2 000 active buckets.      |
+| **Expected values**    | `EV_swing` = mean ΔRE for swings in bucket • `EV_take` = mean ΔRE for takes. Buckets < 30 samples fall back to league mean. |
 | **Decision Δ (loss)**  | `chosen_EV – max(EV_swing, EV_take)` ≤ 0                                                                                    |
 | **Decision advantage** | `(-Decision Δ) × 100 – league_mean` → **runs gained / 100 pitches**, league‑zero‑centered.                                  |
 | **Model**              | ColumnTransformer (`prep`) + XGBoostRegressor; GroupKFold by batter; CV MAE ≈ 0.052 runs.                                   |
